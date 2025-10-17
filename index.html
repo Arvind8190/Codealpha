@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Gallery </title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Image Gallery</h1>
+    <p class="lead">Responsive gallery with lightbox, navigation and categories.</p>
+  </header>
+
+
+  <nav class="gallery-controls" aria-label="Filter images">
+    <button type="button" data-category="all" aria-pressed="true">All</button>
+    <button type="button" data-category="nature">Nature</button>
+    <button type="button" data-category="people">People</button>
+    <button type="button" data-category="architecture">Architecture</button>
+    <button type="button" data-category="abstract">Abstract</button>
+  </nav>
+
+ 
+  <main class="gallery" id="gallery" role="list">
+
+   
+    <figure class="gallery-item" role="listitem" data-category="nature" data-index="0">
+      <img src="./image/1.jpg" alt="Mountain lake at sunrise" loading="lazy">
+      <figcaption class="caption">Mountain lake — Sunrise</figcaption>
+    </figure>
+
+    <figure class="gallery-item" role="listitem" data-category="people" data-index="1">
+      <img src="./image/2.jpg" alt="Portrait of a smiling person" loading="lazy">
+      <figcaption class="caption">Smiling portrait</figcaption>
+    </figure>
+
+    <figure class="gallery-item" role="listitem" data-category="architecture" data-index="2">
+      <img src=".//image/3.jpg" alt="Modern building exterior" loading="lazy">
+      <figcaption class="caption">Modern architecture</figcaption>
+    </figure>
+
+    <figure class="gallery-item" role="listitem" data-category="abstract" data-index="3">
+      <img src="./image/4.jpg" alt="Colorful abstract shapes" loading="lazy">
+      <figcaption class="caption">Abstract color study</figcaption>
+    </figure>
+
+    <figure class="gallery-item" role="listitem" data-category="nature" data-index="4">
+      <img src="./image/5.jpg" alt="Forest path in autumn" loading="lazy">
+      <figcaption class="caption">Autumn forest path</figcaption>
+    </figure>
+
+    <figure class="gallery-item" role="listitem" data-category="people" data-index="5">
+      <img src="./image/6.jpg" alt="Child playing in water" loading="lazy">
+      <figcaption class="caption">Playtime</figcaption>
+    </figure>
+
+    
+  </main>
+
+  
+  <div class="grid-navigation" aria-hidden="true">
+    <button type="button" id="grid-prev" aria-label="Previous page">◀ Prev</button>
+    <button type="button" id="grid-next" aria-label="Next page">Next ▶</button>
+  </div>
+
+  
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-backdrop" data-action="close"></div>
+
+    <div class="lightbox-panel" role="document">
+      <button class="lightbox-close" data-action="close" aria-label="Close">✕</button>
+
+      <div class="lightbox-media">
+       
+        <button class="lightbox-nav lightbox-prev" data-action="prev" aria-label="Previous image">◀</button>
+        <img src="" alt="" id="lightbox-image">
+        <button class="lightbox-nav lightbox-next" data-action="next" aria-label="Next image">▶</button>
+      </div>
+
+      <div class="lightbox-meta">
+        <p id="lightbox-caption"></p>
+        <div class="lightbox-actions">
+          <a id="lightbox-download" href="#" download target="_blank" rel="noopener">Download</a>
+          <button id="lightbox-fullscreen" type="button">Fullscreen</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
